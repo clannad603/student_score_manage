@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/student?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=GMT%2B8
+    username: root
+    password: clannadhr01
+    driver-class-name: com.mysql.cj.jdbc.Driver
+mybatis-plus:
+  typeAliasesPackage: com.huangrui.spring_fx.dao.pojo
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+    call-setters-on-nulls: true
+  global-config:
+    db-config:
+      table-prefix: hr_
+  mapper-locations: classpath*:mapper/**/*Mapper.xml
+
+javafx:
+  title: student_score_manage_system
+  appicons: /icon/icon.png
+  stage:
+    width: 640
+    height: 480
+    resizable: false

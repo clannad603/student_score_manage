@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="400.0" stylesheets="@../css/login.css" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.huangrui.student_score_manage.controller.LoginViewController">
+   <children>
+      <TextField fx:id="hr_login_username" layoutX="144.0" layoutY="125.0" promptText="登录用户名" />
+      <PasswordField fx:id="hr_login_password" layoutX="144.0" layoutY="190.0" promptText="登录密码" />
+      <Text fx:id="hr_login_title" layoutX="190.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="学生成绩管理系统" />
+      <Button fx:id="hr_login_btn" layoutX="144.0" layoutY="257.0" mnemonicParsing="false" text="登录" onAction="#login">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </children>
+</AnchorPane>

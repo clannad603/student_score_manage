@@ -1,0 +1,18 @@
+#hr_menu_vbox{
+    -fx-padding: 0 10 20 30;
+}
+#hr_menu_select_title{
+    -fx-font-size: 32;
+}
+#hr_menu_select_menu_1{
+    -fx-font-size: 20;
+}
+#hr_menu_select_menu_2{
+    -fx-font-size: 20;
+}
+#hr_menu_select_menu_3{
+    -fx-font-size: 20;
+}
+#hr_menu_select_menu_4{
+    -fx-font-size: 20;
+}
