@@ -1,17 +1,18 @@
 package com.huangrui.student_score_manage.controller;
 
+import com.huangrui.student_score_manage.StudentScoreManageApplication;
+import com.huangrui.student_score_manage.view.StudentInfoView;
 import de.felixroske.jfxsupport.FXMLController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
-
 import java.net.URL;
 import java.util.ResourceBundle;
 
 @FXMLController
-public class MenuSelect implements Initializable {
+public class MenuSelectController implements Initializable {
 
     public Text hr_menu_select_title;
     public Button hr_menu_select_btn_1;
@@ -28,5 +29,11 @@ public class MenuSelect implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+    }
+
+    @FXML
+    public void choose_one() {
+        StudentScoreManageApplication.getStage().close();
+        StudentScoreManageApplication.showView(StudentInfoView.class);
     }
 }

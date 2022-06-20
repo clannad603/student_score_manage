@@ -2,7 +2,6 @@ package com.huangrui.student_score_manage.controller;
 
 import com.huangrui.student_score_manage.StudentScoreManageApplication;
 import com.huangrui.student_score_manage.service.UserService;
-import com.huangrui.student_score_manage.view.MainView;
 import com.huangrui.student_score_manage.view.MenuSelectView;
 import de.felixroske.jfxsupport.FXMLController;
 import javafx.fxml.FXML;

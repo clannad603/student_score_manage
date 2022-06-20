@@ -12,8 +12,14 @@ public class Student {
     @TableField(value = "student_name")
     private String name;
 
-    @TableField(value = "student_address")
-    private String address;
+    @TableField(value = "math")
+    private Integer math;
+
+    @TableField(value = "english")
+    private Integer english;
+
+    @TableField(value = "program_design")
+    private Integer programDesign;
 
     @TableField(value ="deleted")
     @TableLogic

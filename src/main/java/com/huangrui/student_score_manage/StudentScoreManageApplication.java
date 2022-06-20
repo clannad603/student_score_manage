@@ -1,20 +1,15 @@
 package com.huangrui.student_score_manage;
 
-import com.huangrui.student_score_manage.controller.MainScene;
 import com.huangrui.student_score_manage.view.LoginView;
-import com.huangrui.student_score_manage.view.MainView;
 import com.huangrui.student_score_manage.view.MySplashScreen;
 import de.felixroske.jfxsupport.AbstractJavaFxApplicationSupport;
 import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
-import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.util.Collection;
-import java.util.Collections;
 import java.util.Optional;
 
 @SpringBootApplication
@@ -23,8 +18,6 @@ public class StudentScoreManageApplication extends AbstractJavaFxApplicationSupp
     public static void main(String[] args) {
         launch(StudentScoreManageApplication.class, LoginView.class, new MySplashScreen(), args);
     }
-
-
 
     @Override
     public void start(Stage stage) throws Exception {
