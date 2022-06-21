@@ -2,6 +2,7 @@ package com.huangrui.student_score_manage;
 
 import com.huangrui.student_score_manage.dao.StudentMapper;
 import com.huangrui.student_score_manage.entity.Student;
+import com.huangrui.student_score_manage.model.ScoreRankModel;
 import com.huangrui.student_score_manage.model.StudentInfoModel;
 import com.huangrui.student_score_manage.service.StudentService;
 import org.junit.jupiter.api.Test;
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.util.DigestUtils;
 
+import java.util.List;
 import java.util.Random;
 
 @SpringBootTest
@@ -19,6 +21,7 @@ class StudentScoreManageApplicationTests {
 
     @Autowired
     private StudentMapper studentMapper;
+
 
     int getRandom(int max, int min){
         Random random = new Random();
@@ -48,8 +51,22 @@ class StudentScoreManageApplicationTests {
 
     @Test
     void selectStudent(){
-        StudentInfoModel studentInfoModel = studentService.getStudentInfoModel("1");
-        System.out.println(studentInfoModel.getMath());
+//        for (int i = 1; i < 11; i++) {
+//            Student student = studentMapper.selectById(i);
+//            student.setTotal(student.getMath() + student.getEnglish() + student.getProgramDesign());
+//            studentMapper.updateById(student);
+//        }
+        Student student = studentMapper.selectById(11);
+        student.setTotal(student.getMath() + student.getEnglish() + student.getProgramDesign());
+        studentMapper.updateById(student);
     }
 
+    @Test
+    void getRank(){
+        List<ScoreRankModel> scoreRank = studentMapper.getScoreRank();
+        for (ScoreRankModel scoreRankModel : scoreRank) {
+            System.out.println(scoreRankModel.getStudentName());
+            System.out.println(scoreRankModel.getScore());
+        }
+    }
 }

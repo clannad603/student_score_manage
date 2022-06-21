@@ -1,8 +1,11 @@
 package com.huangrui.student_score_manage.controller;
 
 import com.huangrui.student_score_manage.StudentScoreManageApplication;
+import com.huangrui.student_score_manage.view.ScoreRankView;
 import com.huangrui.student_score_manage.view.StudentInfoView;
+import com.huangrui.student_score_manage.view.SubjectsInfoView;
 import de.felixroske.jfxsupport.FXMLController;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -14,15 +17,6 @@ import java.util.ResourceBundle;
 @FXMLController
 public class MenuSelectController implements Initializable {
 
-    public Text hr_menu_select_title;
-    public Button hr_menu_select_btn_1;
-    public Button hr_menu_select_btn_2;
-    public Button hr_menu_select_btn_3;
-    public Button hr_menu_select_btn_4;
-    public Text hr_menu_select_menu_1;
-    public Text hr_menu_select_menu_2;
-    public Text hr_menu_select_menu_3;
-    public Text hr_menu_select_menu_4;
     @FXML
     private VBox hr_menu_vbox;
 
@@ -35,5 +29,15 @@ public class MenuSelectController implements Initializable {
     public void choose_one() {
         StudentScoreManageApplication.getStage().close();
         StudentScoreManageApplication.showView(StudentInfoView.class);
+    }
+
+    public void choose_two() {
+        StudentScoreManageApplication.getStage().close();
+        StudentScoreManageApplication.showView(ScoreRankView.class);
+    }
+
+    public void choose_three() {
+        StudentScoreManageApplication.getStage().close();
+        StudentScoreManageApplication.showView(SubjectsInfoView.class);
     }
 }

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1"
+            stylesheets="@../css/student_info_add.css"
+            fx:controller="com.huangrui.student_score_manage.controller.StudentInfoAddController">
+   <children>
+      <Button layoutY="7.0" mnemonicParsing="false" text="返回" onAction="#callback" />
+      <Text fx:id="hr_student_info_add_title" layoutX="198.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="新增学生信息"/>
+      <TextField fx:id="student_name" layoutX="140.0" layoutY="64.0" promptText="学生姓名" />
+      <TextField fx:id="math_score" layoutX="140.0" layoutY="131.0" promptText="数学" />
+      <TextField fx:id="english_score" layoutX="140.0" layoutY="200.0" promptText="英语" />
+      <TextField fx:id="program_design_score" layoutX="140.0" layoutY="266.0" promptText="程序设计" />
+      <Button layoutX="140.0" layoutY="325.0" mnemonicParsing="false" text="提交" onAction="#addStudent" />
+   </children>
+</AnchorPane>

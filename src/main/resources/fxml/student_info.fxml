@@ -21,8 +21,9 @@
                 <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
             </columnResizePolicy>
         </TableView>
-        <Button layoutX="468.0" layoutY="7.0" mnemonicParsing="false" onAction="#select" text="查询" />
+        <Button layoutX="387.0" layoutY="7.0" mnemonicParsing="false" onAction="#select" text="查询" />
         <TextField fx:id="hr_student_info_id" layoutX="144.0" layoutY="7.0" promptText="输入学生学号" />
-      <Button fx:id="hr_student_info_btn_update" layoutX="555.0" layoutY="7.0" mnemonicParsing="false" onAction="#update" text="修改" />
+      <Button fx:id="hr_student_info_btn_update" layoutX="478.0" layoutY="7.0" mnemonicParsing="false" onAction="#update" text="修改" />
+      <Button fx:id="hr_student_info_btn_add" layoutX="568.0" layoutY="7.0" mnemonicParsing="false" text="新增" onAction="#addStudent"/>
     </children>
 </AnchorPane>

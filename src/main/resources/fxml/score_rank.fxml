@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="480.0" prefWidth="640.0" stylesheets="@../css/score_rank.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.huangrui.student_score_manage.controller.ScoreRankController">
+   <children>
+      <Button layoutY="7.0" mnemonicParsing="false" onAction="#callBack" text="返回" />
+      <Text fx:id="score_rank_title" layoutX="202.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="学生成绩排名" />
+      <TableView fx:id="score_rank_table" editable="true" layoutY="80.0" prefHeight="400.0" prefWidth="640.0">
+        <columns>
+          <TableColumn fx:id="score_rank_name" prefWidth="75.0" text="学生姓名" />
+          <TableColumn fx:id="score_rank_score" prefWidth="75.0" text="总分" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+   </children>
+</AnchorPane>

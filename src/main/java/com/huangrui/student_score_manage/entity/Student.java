@@ -21,6 +21,9 @@ public class Student {
     @TableField(value = "program_design")
     private Integer programDesign;
 
+    @TableField(value = "total")
+    private Integer total;
+
     @TableField(value ="deleted")
     @TableLogic
     private Integer deleted;

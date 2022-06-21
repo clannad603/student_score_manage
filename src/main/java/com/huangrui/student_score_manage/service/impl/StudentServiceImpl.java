@@ -32,8 +32,25 @@ public class StudentServiceImpl implements StudentService {
         studentInfoModel.setMath(String.valueOf(student.getMath()));
         studentInfoModel.setEnglish(String.valueOf(student.getEnglish()));
         studentInfoModel.setProgramDesign(String.valueOf(student.getProgramDesign()));
-        studentInfoModel.setTotal(String.valueOf(student.getMath()+ student.getEnglish() + student.getProgramDesign()));
+        studentInfoModel.setTotal(String.valueOf(student.getTotal()));
+        studentInfoModel.setId(student.getId());
         return studentInfoModel;
+    }
+
+    @Override
+    public int update(StudentInfoModel editStudentInfoModel) {
+        Student student = new Student();
+        student.setId(editStudentInfoModel.getId());
+        student.setMath(Integer.valueOf(editStudentInfoModel.getMath()));
+        student.setEnglish(Integer.valueOf(editStudentInfoModel.getEnglish()));
+        student.setProgramDesign(Integer.valueOf(editStudentInfoModel.getProgramDesign()));
+        int i = studentMapper.updateById(student);
+        return i>0?1:0;
+    }
+
+    @Override
+    public int addStudent(Student student) {
+        return studentMapper.insert(student);
     }
 
     public  Boolean checkStringPositiveNum(String val) {

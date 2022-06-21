@@ -35,7 +35,6 @@ public class LoginViewController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
     }
 
-    @FXML
     public void login() {
         String name = hr_login_username.getText();
         String password = hr_login_password.getText();

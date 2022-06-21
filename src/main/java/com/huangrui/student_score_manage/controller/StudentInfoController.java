@@ -4,11 +4,10 @@ import com.huangrui.student_score_manage.StudentScoreManageApplication;
 import com.huangrui.student_score_manage.model.StudentInfoModel;
 import com.huangrui.student_score_manage.service.StudentService;
 import com.huangrui.student_score_manage.view.MenuSelectView;
-import com.huangrui.student_score_manage.view.StudentInfoView;
+import com.huangrui.student_score_manage.view.StudentInfoAddView;
 import de.felixroske.jfxsupport.FXMLController;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -16,7 +15,6 @@ import javafx.scene.control.cell.TextFieldTableCell;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.net.URL;
-import java.util.List;
 import java.util.ResourceBundle;
 
 @FXMLController
@@ -24,6 +22,7 @@ public class StudentInfoController implements Initializable {
 
     public TextField hr_student_info_id;
     public Button hr_student_info_btn_update;
+    public Button hr_student_info_btn_add;
     @Autowired
     private StudentService studentService;
     private StudentInfoModel studentInfoModel;
@@ -70,10 +69,29 @@ public class StudentInfoController implements Initializable {
     public void select() {
         hr_student_info_table.getItems().remove(studentInfoModel);
         studentInfoModel = studentService.getStudentInfoModel(hr_student_info_id.getText());
+        System.out.println(studentInfoModel.getId());
         hr_student_info_table.getItems().add(studentInfoModel);
     }
 
     public void update() {
-        System.out.println(editStudentInfoModel.getMath());
+        editStudentInfoModel.setId(studentInfoModel.getId());
+        int is_update = studentService.update(editStudentInfoModel);
+        if (is_update == 1) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.initOwner(StudentScoreManageApplication.getStage());
+            alert.setHeaderText("更新成功");
+            alert.showAndWait();
+            select();
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.initOwner(StudentScoreManageApplication.getStage());
+            alert.setHeaderText("更新失败");
+            alert.showAndWait();
+        }
+    }
+
+    public void addStudent() {
+        StudentScoreManageApplication.getStage().close();
+        StudentScoreManageApplication.showView(StudentInfoAddView.class);
     }
 }

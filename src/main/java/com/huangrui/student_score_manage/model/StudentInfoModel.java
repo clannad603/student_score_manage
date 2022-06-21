@@ -3,6 +3,7 @@ package com.huangrui.student_score_manage.model;
 import javafx.beans.property.SimpleStringProperty;
 
 public class StudentInfoModel {
+    private Long id;
     private SimpleStringProperty math;
     private SimpleStringProperty programDesign;
     private SimpleStringProperty english;
@@ -13,6 +14,14 @@ public class StudentInfoModel {
         this.programDesign = new SimpleStringProperty();
         this.english = new SimpleStringProperty();
         this.total = new SimpleStringProperty();
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getMath() {
